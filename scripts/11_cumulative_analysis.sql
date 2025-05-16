@@ -1,4 +1,9 @@
--->>CUMULATIVE ANALYSIS
+/*
+Script: cumulative_analysis.sql
+
+This script analyzes cumulative sales trends over time.
+It calculates total sales for each month, tracks running total sales, and computes a moving average for prices. 
+*/
 
 --Find total sales, running_total_sales, moving_average, percent difference from previous sales
 

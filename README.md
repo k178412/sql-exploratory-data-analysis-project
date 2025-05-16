@@ -5,6 +5,7 @@ This project demonstrates different analytical techniques such as changes over t
 
 ## Project Overview
 This project is all about exploratory data analysis (EDA) using SQL. The goal is to analyze structured data and extract useful insights. The analysis covers different aspects, including date range exploration, ranking, changes over time, cumulative trends, performance tracking, part-to-whole relationships, and data segmentation.
+
 Two reports- Customers Report and Products Report bring together key findings to help understand customer behavior and product performance.
 
 ---

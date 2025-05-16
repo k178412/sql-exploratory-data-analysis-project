@@ -24,14 +24,14 @@ The project includes:
 ---
   
 ## Reports
-## Customers Report
+### Customers Report
 Includes:
 - Customers basic info (names, ages)
 - Transactional details (total orders, total sales)
 - Customers segmentation
 - Valuable KPIs (Time since last purchase, average order value)
   
-## Products Report
+### Products Report
 Includes:
 - Products basic info (product name, category)
 - Products segmentation

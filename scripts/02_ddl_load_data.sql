@@ -1,6 +1,9 @@
 /*
-This script loads the data from the source: csv files to gold schema tables.
-This script truncates the tables before loading the data.
+Script: ddl_load_data.sql
+
+This script loads data from CSV files into the 'gold' schema tables. 
+Before inserting, it truncates the tables to clear old data. 
+It then uses 'BULK INSERT' to efficiently load data into dim_customers, dim_products, and fact_sales, ensuring clean and updated tables.
 */
 
 print char(10) + '-------------------------------------------------' + char(10);

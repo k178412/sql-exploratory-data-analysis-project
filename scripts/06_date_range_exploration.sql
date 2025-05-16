@@ -1,4 +1,8 @@
--->> DATES EXPLORATION   (Exploring the boundaries of dates)
+/*
+Script: date_range_exploration.sql
+
+This script explores date boundaries in the dataset.
+*/
 
 --Find the first and last order date
 select 

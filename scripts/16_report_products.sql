@@ -1,24 +1,25 @@
 /*
-===============================================================================
-Product Report
-===============================================================================
+Products Report
+
 Purpose:
-    - This report consolidates key product metrics and behaviors.
+This report consolidates key product metrics to analyze performance and trends.
 
 Highlights:
-    1. Displays essential info such as product name, category, subcategory, and cost.
-    2. Segments products by revenue to identify High-Performers, Mid-Range, or Low-Performers.
-    3. Aggregates product-level metrics:
-       - total orders
-       - total sales
-       - total quantity sold
-       - total customers (unique)
-       - lifespan (in months)
-    4. Calculates valuable KPIs:
-       - recency (months since last sale)
-       - average order revenue (AOR)
-       - average monthly revenue
-===============================================================================
+1. Displays essential details, including product name, category, subcategory, and cost.
+2. Segments products based on revenue into High-Performers, Mid-Range, and Low-Performers.
+3. Provides product-level insights:
+	Total orders
+	Total sales
+	Total quantity sold
+	Unique customers
+	Lifespan (months)
+4. Calculates key performance indicators (KPIs):
+	Recency: Months since last sale
+	Average Order Revenue (AOR)
+	Average Monthly Revenue
+
+Usage:
+	select * from report_products;
 */
 
 if object_id('report_products', 'v') is not null

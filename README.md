@@ -4,43 +4,48 @@ This project demonstrates different analytical techniques such as changes over t
 ---
 
 ## Project Overview
-This project focuses on exploratory data analysis (EDA) using SQL, aimed at uncovering insights from a structured database. 
-The analysis covers multiple dimensions, including date range exploration, magnitude analysis, ranking, change over time, cumulative trends, performance evaluation, part-to-whole relationships, and data segmentation.
-Two key reports- Customers Report and Products Report; compile all essential information into a single place for better business understanding.
+This project is all about exploratory data analysis (EDA) using SQL. The goal is to analyze structured data and extract useful insights. The analysis covers different aspects, including date range exploration, ranking, changes over time, cumulative trends, performance tracking, part-to-whole relationships, and data segmentation.
+Two reports- Customers Report and Products Report bring together key findings to help understand customer behavior and product performance.
 
 ---
 
 ## Key Analytical Areas
-The project includes in-depth SQL based analysis across various perspectives:
-- Database Structure Exploration – Understanding schema, dimensions, and relationships.
-- Date Range Exploration – Finding trends based on order timelines.
-- Magnitude Analysis – Quantifying total sales, purchases, and other metrics.
-- Ranking & Performance – Identifying top-performing customers and products.
-- Change Over Time – Observing sales and purchase behavior shifts over periods.
-- Cumulative & Segmentation Analysis – Tracking aggregated patterns and customer/product categorization.
-- Part-to-Whole Analysis – Measuring contributions of individual entities to overall business metrics.
+The project includes:
+- **Database Exploration** - Understanding database, schema, dimensions, and relationships.
+- **Date Range Exploration** - Finding trends based on order timelines.
+- **Magnitude & Ranking Analysis** - Measuring total sales and identifying top customers.
+- **Performance Analysis** - Evaluating performance of customers/products by comparing them with total sales, avg sales etc.
+- **Change Over Time** - Observing sales and purchase behavior over time.
+- **Cumulative Analysis** - Observing aggregated patterns such as running total or moving average.
+- **Part-to-Whole Analysis** - Understanding contributions to overall business metrics.
+- **Data Segmentation** – Grouping customers and products for deeper insights.
 
 ---
   
 ## Reports
 ## Customers Report
 Includes:
-- Customer demographics (age, segmentation, engagement)
-- Purchase behavior (total orders, total sales, product diversity)
-- Time since last purchase and average order value
-- Monthly spending trends
+- Customers basic info (names, ages)
+- Transactional details (total orders, total sales)
+- Customers segmentation
+- Valuable KPIs (Time since last purchase, average order value)
   
 ## Products Report
 Includes:
-- Product sales performance
-- Ranking of top selling items
-- Frequency and distribution of purchases
-- Seasonal trends and longevity analysis
+- Products basic info (product name, category)
+- Products segmentation
+- Metrics (total sales, total sold quantity)
+- Valuable KPIs (months since last sale, average order value)
 
 ---
   
 ## Technology Stack
-- SQL – for querying, aggregating, and analyzing data
-- Data Warehouse (previous project) – structured dataset foundation
-- GitHub – version control and collaboration
+- **SQL** - for querying and analysis
+- **Data Warehouse (previous project)** - structured dataset foundation
+- **GitHub** - version control and project tracking
+
+---
+
+## Contributing
+If you have ideas for improving the analysis or adding new insights, feel free to share them.
 

@@ -5,6 +5,10 @@ This script creates
 	and 3 tables.
 This script also checks if the database with the name 'DataWarehouseAnalytics' already exists,
 and if it does then drop that database in that case and recreate a new one.
+- dim_customers – Stores customer details like name, birthdate, and country.
+- dim_products – Contains product information, including category and cost.
+- fact_sales – Holds order details like sales amounts, quantities, and dates.
+
 */
 
 use master;

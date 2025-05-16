@@ -16,10 +16,10 @@ EDA focuses on understanding the dataset through different perspectives:
 ### 2. Advanced Analytics
 Advanced techniques aim to derive deeper insights and business patterns:
 
-- Change-Over-Time Analysis – Tracking trends and variations.
+- Change Over Time Analysis – Tracking trends and variations.
 - Cumulative Analysis – Evaluating cumulative metrics like running totals.
 - Performance Analysis – Measuring product or customer performance against averages.
-- Part-to-Whole Analysis – Understanding proportional contributions in sales.
+- Part to Whole Analysis – Understanding proportional contributions in sales.
 - Data Segmentation – Categorizing entities like customers or products.
 - Reporting – Generating meaningful reports for business intelligence.
 

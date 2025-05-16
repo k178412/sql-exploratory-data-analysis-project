@@ -1,7 +1,9 @@
 # SQL-EXPLORATORY-DATA-ANALYSIS-PROJECT
 This project demonstrates different analytical techniques such as changes over time, cumulative, performance, part to whole analysis.
 
-📌# Project Overview
+---
+
+📌## Project Overview
 This project focuses on exploratory data analysis (EDA) using SQL, aimed at uncovering insights from a structured database. 
 The analysis covers multiple dimensions, including date range exploration, magnitude analysis, ranking, change over time, cumulative trends, performance evaluation, part-to-whole relationships, and data segmentation.
 Two key reports- Customers Report and Products Report; compile all essential information into a single place for better business understanding.

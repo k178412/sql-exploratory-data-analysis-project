@@ -1,4 +1,10 @@
--->>PERFORMANCE ANALYSIS
+/*
+Script: performance_analysis.sql
+
+This script analyzes yearly product performance.
+It compares each product's sales to its average sales over time and calculates the difference from previous years. 
+This helps in identifying trends, growth patterns, and potential declines in sales performance.
+*/
 
 --Analyze the yearly performance of products by comparing each product's sales to both its average sales and previous sales.
 with total_sales_cte as(

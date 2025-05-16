@@ -1,14 +1,12 @@
 /*
-This script creates 
-	A database 'DataWarehouseAnalytics',
-	A schema 'gold',
-	and 3 tables.
-This script also checks if the database with the name 'DataWarehouseAnalytics' already exists,
-and if it does then drop that database in that case and recreate a new one.
-- dim_customers – Stores customer details like name, birthdate, and country.
-- dim_products – Contains product information, including category and cost.
-- fact_sales – Holds order details like sales amounts, quantities, and dates.
+Script: init_database.sql
 
+This script sets up the 'DataWarehouseAnalytics' database. 
+If the database already exists, it is dropped and recreated to ensure a fresh start. 
+It then creates the 'gold' schema and defines three tables:
+	-dim_customers - Stores customer details like name, birthdate, and country.
+	-dim_products - Contains product information, including name, category and cost.
+	-fact_sales - Holds order details like sales amounts, quantities, and order dates.
 */
 
 use master;

@@ -1,4 +1,10 @@
--->>CHANGE OVER TIME ANALYSIS
+/*
+Script: change_over_time_analysis.sql
+
+This script analyzes sales trends over time.
+It examines order dates to track performance across months and years, both with and without the dim_dates table. 
+By grouping sales data by different time intervals, it helps in identifying patterns and seasonal variations in revenue.
+*/
 
 --Performance of sales over time
 select * from gold.dim_dates;

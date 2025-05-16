@@ -1,4 +1,8 @@
--->> MEASURES EXPLORATION
+/*
+Script: measures_exploration.sql
+
+This script calculates key business metrics.
+*/
 
 --Find the total sales
 select sum(sales_amount) as total_sales from gold.fact_sales;

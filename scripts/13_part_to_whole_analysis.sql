@@ -1,4 +1,9 @@
--->>PART TO WHOLE ANALYSIS
+/*
+Script: part_to_whole_analysis.sql
+
+This script analyzes how different product categories contribute to total sales.
+It calculates total sales for each category, determines its percentage of overall revenue, and ranks categories based on their contribution.
+*/
 
 --Find which category contribute the most to total sale.
 

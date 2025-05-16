@@ -5,17 +5,15 @@ Purpose:
 This report consolidates key customer metrics to analyze purchasing behaviors and segmentation.
 
 Highlights:
-	Displays essential details such as names, ages, and transaction history.
-	Segments customers into VIP, Regular, and New, along with age groups.
-
-Provides customer-level metrics, including:
+1. Displays essential details such as names, ages, and transaction history.
+2. Segments customers into VIP, Regular, and New, along with age groups.
+3. Provides customer-level metrics, including:
 	Total orders
 	Total sales
 	Total quantity purchased
 	Total products bought
 	Customer lifespan (months)
-
-Calculates key performance indicators (KPIs):
+4. Calculates key performance indicators (KPIs):
 	Recency: Time since last purchase
 	Average Order Value: Sales per order
 	Average Monthly Spend: Spending trend over time

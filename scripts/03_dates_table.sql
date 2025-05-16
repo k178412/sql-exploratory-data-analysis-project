@@ -1,5 +1,10 @@
 /*
-This script creates Dates (calendar) table inside 'gold' schema which can be used for data anaytics.
+Script: dates_table.sql
+
+This script creates the dim_dates table inside the gold schema for calendar-based analysis.
+It first removes the existing table to start fresh. Then, it defines the table structure with columns for year, month, day, and important date attributes. 
+A recursive CTE fills the table with dates based on the range in fact_sales. 
+Finally, an update step adds details like weekdays, month names, and period start dates.
 */
 
 drop table gold.dim_dates;

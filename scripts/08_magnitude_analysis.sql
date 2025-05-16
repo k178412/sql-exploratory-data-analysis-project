@@ -1,4 +1,8 @@
--->> MAGNITUDE ANALYSIS (Measuers by Dimensions)
+/*
+Script: magnitude_analysis.sql
+
+This script analyzes key measures grouped by different dimensions.
+*/
 
 --Find the total customers by countries
 select

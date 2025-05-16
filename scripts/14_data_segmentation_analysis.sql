@@ -1,4 +1,10 @@
--->>DATA SEGMENTATION
+/*
+Script: data_segmentation.sql
+
+This script segments products and customers for analysis.
+It classifies products into different cost ranges and counts how many fall into each category. 
+It also groups customers based on their spending history and duration, categorizing them as VIP, Regular, or New.
+*/
 
 --Segment products into cost ranges and count how many products fall in each segment?
 

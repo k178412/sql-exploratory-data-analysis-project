@@ -1,4 +1,9 @@
--->> RANKING ANALYSIS
+/*
+Script: ranking_analysis.sql
+
+This script ranks products based on their sales performance.
+It identifies the top five products generating the highest revenue and lists the ten worst performing products in terms of total sales.
+*/
 
 --Find 5 products generating highest revenue
 select * from(

@@ -1,24 +1,27 @@
 /*
-===============================================================================
-Customer Report
-===============================================================================
+Customers Report
+
 Purpose:
-    - This report consolidates key customer metrics and behaviors.
+This report consolidates key customer metrics to analyze purchasing behaviors and segmentation.
 
 Highlights:
-    1. Displays essential info such as names, ages, and transaction details.
-	2. Segments customers into categories (VIP, Regular, New) and age groups.
-    3. Aggregates customer-level metrics:
-	   - total orders
-	   - total sales
-	   - total quantity purchased
-	   - total products
-	   - lifespan (in months)
-    4. Calculates valuable KPIs:
-	    - recency (time_since_last_purchase)
-		- average order value
-		- average monthly spend
-===============================================================================
+	Displays essential details such as names, ages, and transaction history.
+	Segments customers into VIP, Regular, and New, along with age groups.
+
+Provides customer-level metrics, including:
+	Total orders
+	Total sales
+	Total quantity purchased
+	Total products bought
+	Customer lifespan (months)
+
+Calculates key performance indicators (KPIs):
+	Recency: Time since last purchase
+	Average Order Value: Sales per order
+	Average Monthly Spend: Spending trend over time
+
+Usage:
+	select * from report_customers;
 */
 
 if object_id('report_customers', 'v') is not null

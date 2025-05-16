@@ -1,4 +1,8 @@
--->> DATABASE EXPLORATION
+/*
+Script: database_exploration.sql
+
+This script helps explore the database structure.
+*/
 
 --Explore all objetcs in the database
 select * from information_schema.tables;

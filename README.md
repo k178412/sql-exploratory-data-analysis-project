@@ -2,14 +2,14 @@
 
 ---
 
-## Project Overview
+## 📊 Project Overview
 This project is all about exploratory data analysis (EDA) using SQL. The goal is to analyze structured data and extract useful insights. The analysis covers different aspects, including date range exploration, ranking, changes over time, cumulative trends, performance tracking, part-to-whole relationships, and data segmentation.
 
 Two reports- **Customers Report** and **Products Report** bring together key findings to help understand customer behavior and product performance.
 
 ---
 
-## Key Analytical Areas
+## 🔍 Key Analytical Areas
 The project includes:
 - **Database Exploration** - Understanding database, schema, dimensions, and relationships.
 - **Date Range Exploration** - Finding trends based on order timelines.
@@ -22,15 +22,15 @@ The project includes:
 
 ---
   
-## Reports
-### Customers Report
+## 📜 Reports
+### 1️⃣ Customers Report
 Includes:
 - Customers basic info (names, ages)
 - Customers segmentation
 - Transactional details (total orders, total sales)
 - Key KPIs (time since last purchase, average order value)
   
-### Products Report
+### 2️⃣ Products Report
 Includes:
 - Products basic info (product name, category)
 - Products segmentation
@@ -39,13 +39,18 @@ Includes:
 
 ---
   
-## Technology Stack
+## 🛠️ Technology Stack
 - **SQL** - for querying and analysis
 - **Data Warehouse (previous project)** - structured dataset foundation
 - **GitHub** - version control and project tracking
 
 ---
 
-## Contributing
+## 🔒 License
+This project is licensed under MIT License.
+
+---
+
+## 🤝 Contributing
 If you have ideas for improving the analysis or adding new insights, feel free to share them.
 

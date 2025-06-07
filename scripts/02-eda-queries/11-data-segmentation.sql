@@ -12,10 +12,10 @@ select
 	product_name,
 	cost,
 	case when cost < 100 then 'below 100'
-			  when cost between 100 and 500 then '100-500'
-			  when cost between 501 and 1000 then '501-1000'
-			  when cost between 1001 and 2000 then '1001-2000'
-			  else 'above 2001'
+	  when cost between 100 and 500 then '100-500'
+	  when cost between 501 and 1000 then '501-1000'
+	  when cost between 1001 and 2000 then '1001-2000'
+	  else 'above 2001'
 	end as cost_segments
 from gold.dim_products
 )

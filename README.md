@@ -11,10 +11,25 @@ Two detailed reports **Customers Report** and **Products Report** highlight key 
 
 ---
 
-## 🔍 Key Analytical Areas
-Different types of analysis performed during the project. Each analytical area is designed to explore the data from a specific angle, whether it’s identifying top performers, tracking trends over time, or segmenting customers and products for deeper insights.  
+## 🚀 Setup & Usage 
+Start by launching SQL Server Management Studio (SSMS) and follow these steps to setup the environment before running any analysis queries.  
 
-The project includes:
+**Directory** - ```scripts/01-setup/```
+- [**01-init-database.sql**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/01-setup/01-init-database.sql) - Creates the ```DataWarehouseAnalytics``` database and ```Gold``` schema. Run this first.
+  
+- [**02-ddl-gold.sql**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/01-setup/02-ddl-gold.sql) - Creates tables (```dim_customers```, ```dim_products```, ```fact_sales```) inside the ```Gold``` schema.
+  
+- [**03-load-gold.sql**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/01-setup/03-load-gold.sql) - Loads data into the tables using ```Bulk Insert```.
+  > ⚠️ Make sure to update the file paths of source files in the script to match your local system.
+
+Once setup is complete, you can start running analysis queries from the [02-eda-queries](https://github.com/k178412/sql-exploratory-data-analysis-project/tree/main/scripts/02-eda-queries) folder.
+
+---
+
+## 🔍 Key Analytical Areas
+Various types of analysis were performed throughout the project. Each analytical area focuses on a specific aspect of the data whether it's identifying top performers, uncovering time-based trends, or segmenting customers and products for deeper insights.
+
+Analyses include:
 - [**Database Exploration**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/01-database-exploration.sql) - Explored the structure of the database, including schema, tables, and columns using ```Information Schema```.
 - [**Dimension Exploration**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/02-dimensions-exploration.sql) - Explored different dimensions within the dataset such as different countries customer come from, available product categories.
 - [**Date Range Exploration**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/03-daterange-exploration.sql) - Explored date boundaries in the dataset such as finding first and last order date to see how many year of sales are available.
@@ -26,6 +41,27 @@ The project includes:
 - [**Performance Analysis**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/09-performance-analysis.sql) - Compared yearly total sales for each subcategories against average sales and previous sales to evaluate individual performance.
 - [**Part-to-Whole Analysis**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/10-part-to-whole-analysis.sql) - Analyzed how different product categories contribute to total sales to identify the most impactful segment.
 - [**Data Segmentation**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/02-eda-queries/11-data-segmentation.sql) – Grouped customers based on order history & spending amount and products into cost ranges, enabling more targeted insights.
+  ```sql
+  --Segment products into cost ranges and count how many products fall in each segment.
+  with cost_segments_cte as(
+  select
+  	product_name,
+  	cost,
+  	case when cost < 100 then 'below 100'
+         when cost between 100 and 500 then '100-500'
+  	     when cost between 501 and 1000 then '501-1000'
+  	     when cost between 1001 and 2000 then '1001-2000'
+  	     else 'above 2001'
+  	end as cost_segments
+  from gold.dim_products
+  )
+  select
+  	cost_segments,
+  	count(*) as prdcts_in_sgmnt
+  from cost_segments_cte
+  group by cost_segments
+  order by prdcts_in_sgmnt desc;
+  ```
 
 ---
   

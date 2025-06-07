@@ -1,7 +1,7 @@
 /*
-Script: 06-ranking-analysis.sql
+Ranking Analysis
 
-This script ranks products based on their sales performance.
+This script ranks dimensions value by measures. Top N performers, Bottom N performers.
 */
 
 --Find 5 products generating highest revenue

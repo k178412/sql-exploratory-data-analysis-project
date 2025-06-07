@@ -1,5 +1,5 @@
 /*
-Script: 05-magnitude-analysis.sql
+Magnitude Analysis
 
 This script analyzes key measures grouped by different dimensions.
 */

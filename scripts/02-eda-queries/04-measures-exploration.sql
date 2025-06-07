@@ -1,5 +1,5 @@
 /*
-Script: 04-measures-exploration.sql
+Measures Exploration
 
 This script calculates key business metrics.
 */

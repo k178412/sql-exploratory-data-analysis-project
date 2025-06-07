@@ -1,5 +1,5 @@
 /*
-Script: 11-data-segmentation.sql
+Data Segmentation
 
 This script segments products and customers for analysis.
 It classifies products into different cost ranges and counts how many fall into each category. 
@@ -7,7 +7,6 @@ It also groups customers based on their spending history and duration, categoriz
 */
 
 --Segment products into cost ranges and count how many products fall in each segment?
-
 with cost_segments_cte as(
 select
 	product_name,
@@ -33,7 +32,6 @@ order by prdcts_in_sgmnt desc;
 --				Regular- Customers with atleast 12 months of history and spending of 5000 and less
 --				New- Customers with history less than 12 months
 --and find total no. of customers by each group.
-
 with customers_segment_cte as(
 select
 	c.customer_key,

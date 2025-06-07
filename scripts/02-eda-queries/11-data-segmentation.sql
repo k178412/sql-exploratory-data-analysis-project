@@ -26,31 +26,35 @@ from cost_segments_cte
 group by cost_segments
 order by prdcts_in_sgmnt desc;
 
-
---Segment customers into 3 groups based on their spending behaviour:
---				VIP- Customers with atleast 12 months of history and spending of more than 5000
---				Regular- Customers with atleast 12 months of history and spending of 5000 and less
---				New- Customers with history less than 12 months
---and find total no. of customers by each group.
-with customers_segment_cte as(
+/*
+Segment customers into 3 groups based on their spending behaviour:
+VIP- Customers with atleast 12 months of history and spending of more than 5000
+Regular- Customers with atleast 12 months of history and spending of 5000 and less
+New- Customers with history less than 12 months
+and find total no. of customers by each group.
+*/
+with cte1 as(
 select
-	c.customer_key,
-	sum(s.sales_amount) as total_sales,
-	min(s.order_date) as earliest_order,
-	max(s.order_date) as latest_order,
-	datediff(month, min(s.order_date), max(s.order_date)) as order_gap,
-	case when datediff(month, min(s.order_date), max(s.order_date)) > 10 and sum(s.sales_amount) > 5000 then 'VIP'
-	          when datediff(month, min(s.order_date), max(s.order_date)) > 10 and sum(s.sales_amount) <= 5000 then 'Regular'
-			  when datediff(month, min(s.order_date), max(s.order_date)) < 10 then 'New'
-	end as customers_segment
-from gold.fact_sales s
-left join gold.dim_customers c on c.customer_key=s.customer_key
-group by c.customer_key
+	customer_key,
+	datediff(month, min(order_date), max(order_date)) as order_gap,
+	sum(sales_amount) as total_sales
+from gold.fact_sales
+group by customer_key
+),
+cte2 as(
+select
+	customer_key,
+	case when order_gap >= 12 and total_sales > 5000 then 'VIP'
+	     when order_gap >= 12 and total_sales <= 5000 then 'Regular'
+	     when order_gap < 12 then 'New'
+	end as customer_remark
+from cte1
 )
 select
-	customers_segment,
+	customer_remark,
 	count(*) as total_customers
-from customers_segment_cte
-group by customers_segment
+from cte2
+where customer_remark is not null
+group by customer_remark
 order by total_customers desc;
 

@@ -1,10 +1,11 @@
 /*
-Script: 03-daterange-exploration.sql
+Date Range Exploration
 
 This script explores date boundaries in the dataset.
 */
 
 --Find the first and last order date
+--How many years of sales are available
 select 
 	min(order_date) as first_order, 
 	max(order_date) as last_order,

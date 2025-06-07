@@ -1,5 +1,5 @@
 /*
-Script: 01-database-exploration.sql
+Database Exploration
 
 This script helps explore the database structure.
 */
@@ -8,8 +8,8 @@ This script helps explore the database structure.
 select * from information_schema.tables;
 
 --Explore all columns in the database
-select* from information_schema.columns;
+select * from information_schema.columns;
 
 --Explore columns for a specific table
-select* from information_schema.columns
+select * from information_schema.columns
 where table_name = 'dim_customers';

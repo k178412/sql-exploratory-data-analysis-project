@@ -20,7 +20,7 @@ Start by launching SQL Server Management Studio (SSMS) and follow these steps to
 - [**02-ddl-gold.sql**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/01-setup/02-ddl-gold.sql) - Creates tables (```dim_customers```, ```dim_products```, ```fact_sales```) inside the ```Gold``` schema.
   
 - [**03-load-gold.sql**](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/01-setup/03-load-gold.sql) - Loads data into the tables using ```Bulk Insert```.
-  > ⚠️ Make sure to update the file paths of source files in the script to match your local system.
+  > ⚠️ Make sure to update the file paths of [source files](https://github.com/k178412/sql-exploratory-data-analysis-project/tree/main/datasets) in the script to match your local system.
 
 Once setup is complete, you can start running analysis queries from the [02-eda-queries](https://github.com/k178412/sql-exploratory-data-analysis-project/tree/main/scripts/02-eda-queries) folder.
 

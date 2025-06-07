@@ -10,6 +10,9 @@ Process Overview:
     - Creates the fact table: fact_sales
 */
 
+use DataWarehouseAnalytics;
+go
+
 if object_id('gold.dim_customers', 'u') is not null
   drop table gold.dim_customers;
 go

@@ -1,5 +1,5 @@
 /*
-Script: dimensions_exploration.sql
+Dimensions Exploration
 
 This script explores different dimensions within the database.
 */

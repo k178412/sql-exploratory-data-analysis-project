@@ -1,5 +1,5 @@
 /*
-Script: ranking_analysis.sql
+Script: 06-ranking-analysis.sql
 
 This script ranks products based on their sales performance.
 */

@@ -2,6 +2,7 @@
 Cumulative Analysis
 
 This script analyzes aggregated/cumulative data trends over time.
+It helps to understand whether our business is growing or declining.
 */
 
 --Find total sales, running_total_sales, moving_average, percent difference from previous sales

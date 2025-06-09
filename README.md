@@ -66,7 +66,7 @@ Analyses include:
 ---
   
 ## 📜 Reports
-The project is summarized into two main reports: one focusing on customer behavior, and the other on product performance. These reports bring together key metrics and KPIs, offering a clear picture of business patterns and helping uncover actionable insights.
+The project is summarized into two main reports: one focusing on customer behavior, and the other on product performance. These reports bring together key metrics and KPIs, and can be further be used for analytics or querying purpose.
 
 ### 1️⃣ [Customers Report](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/03-final-reports/01-customers-report.sql)
 Includes:
@@ -82,6 +82,52 @@ Includes:
 - Metrics (total sales, total quantity sold)
 - Key KPIs (months since last sale, average order revenue)
 
+---
+
+## 🧠 Key Findings
+This analysis helped uncovering several insights, including:
+
+- **Older Customers Drive the Most Orders**  
+  Customers aged 50 and above accounted for a majority of total orders (66%), while younger customers (30–39) contributed only 1%.
+  
+  **Query:**
+  ```sql  
+  with cte as(
+  select
+    age_group,
+    sum(total_orders) as total_orders,
+    sum(sum(total_orders)) over() as overall_orders
+  from report_customers
+  group by age_group
+  )
+  select
+    *,
+    cast((cast(total_orders as decimal)/overall_orders) * 100 as decimal(10,1)) as percent_of_overall_orders
+  from cte
+  order by percent_of_overall_orders desc;
+  ```
+  **Result:**
+  | Age Group | Total Orders | Overall Orders | Percent of Overall Orders |
+  |-----------|--------------|----------------|---------------------------|
+  | Above 50  | 18,245       | 27,659         | 66.0%                     |
+  | 40–49     | 9,132        | 27,659         | 33.0%                     |
+  | 30–39     | 282          | 27,659         | 1.0%                      |
+  
+- **Mid-Range Sales Dominate**  
+  Sales between $1,000–$9,999 made up over 93% of total revenue, highlighting the strong performance of mid-range purchases.
+
+- **Average Sale Value Consistent Across Customer Group**  
+  Average sales ranged from $452 to $529 across all gender and marital status combinations, showing similar spending patterns.
+
+- **Top Sales Contributors: US and Australia**  
+  Over 60% of total sales came from the United States (31.2%) and Australia (30.9%), making them the leading markets.
+
+- **2013 Was the Peak Sales Year**  
+  The year 2013 recorded the highest sales, making it the business’s best-performing year in the dataset.
+
+- **Bikes Category Dominated Sales Across Years**  
+  Bikes consistently led all product categories, accounting for 96.46% of total sales highlighting Bikes as the company’s primary revenue driver year after year.
+  
 ---
   
 ## 🛠️ Tools Used

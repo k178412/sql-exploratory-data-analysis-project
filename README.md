@@ -212,3 +212,6 @@ This project is licensed under MIT License.
 ## 🤝 Contributing
 If you have ideas for improving the analysis or adding new insights, feel free to share them.
 
+---
+
+⭐️ If you find this project useful, please consider giving it a star!

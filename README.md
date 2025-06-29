@@ -183,7 +183,9 @@ Orders below $500 accounted for nearly 75% of all transactions, revealing a stro
 
 - **Bikes Category Dominated Sales Across Years**  
   From 2010 to 2013, Bikes remained the top-selling category each year, significantly outperforming Accessories and Clothing in total revenue.
- 
+
+🔍 Click [here](https://github.com/k178412/sql-exploratory-data-analysis-project/blob/main/scripts/04-key-findings/key-findings.sql) to view all key-findings SQL queries.
+
 ---
   
 ## 🛠️ Tools Used

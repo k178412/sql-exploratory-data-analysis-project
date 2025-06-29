@@ -110,13 +110,13 @@ Includes:
 ---
 
 ## 🧠 Key Findings
-This analysis helped uncovering several insights, including:
+The analyses helped uncovering several insights, including:
 
 - **Older Customers Drive the Most Orders**  
   Customers aged 50 and above accounted for a majority of total orders (66%), while younger customers (30–39) contributed only 1%.
-  
-  **Query:**
-  ```sql  
+  <details>
+  <summary>View Query:</summary>
+  <pre><code class="language-sql"> 
   with cte as(
   select
     age_group,
@@ -130,49 +130,45 @@ This analysis helped uncovering several insights, including:
     cast((cast(total_orders as decimal)/overall_orders) * 100 as decimal(10,1)) as percent_of_overall_orders
   from cte
   order by percent_of_overall_orders desc;
-  ```
-  **Result:**
+  </code></pre>
+  </details>
+  
   | Age Group | Total Orders | Overall Orders | Percent of Overall Orders |
   |-----------|--------------|----------------|---------------------------|
   | Above 50  | 18,245       | 27,659         | 66.0%                     |
   | 40–49     | 9,132        | 27,659         | 33.0%                     |
   | 30–39     | 282          | 27,659         | 1.0%                      |
   
-- **Mid-Range Sales Dominate**  
-  Sales between $1,000–$9,999 made up over 93% of total revenue, highlighting the strong performance of mid-range purchases.
+- **Low-Value Orders Dominate**  
+Orders below $500 accounted for nearly 75% of all transactions, revealing a strong concentration of low-ticket purchases.
   
   <details>
   <summary>View Query:</summary>
   <pre><code class="language-sql">
-  with cte1 as(
-  select
-    c.customer_key,
-    case when sum(s.sales_amount) > 10000 then 'above 10,000'
-          when sum(s.sales_amount) between 5000 and 9999 then 'between 5000 and 9999'
-          when sum(s.sales_amount) between 1000 and 4999 then 'between 1000 and 4999'
-          when sum(s.sales_amount) < 999 then 'less than 999'
-    end as sales_remark
-  from gold.fact_sales s
-  left join gold.dim_customers c on s.customer_key = c.customer_key
-  group by c.customer_key
-  ),
-  cte2 as(
-  select
-    cte1.sales_remark,
-    sum(s.sales_amount) as total_sales_by_remark,
-    sum(sum(s.sales_amount)) over() as overall_sales
-  from cte1
-  left join gold.fact_sales s on cte1.customer_key=s.customer_key
-  group by cte1.sales_remark
-  ),
-  cte3 as(
-  select
-    *,
-    cast(cast(total_sales_by_remark as decimal)/overall_sales * 100 as decimal(10,2)) as percent_of_overall
-  from cte2
-  )
-  select * from cte3
-  order by percent_of_overall desc;
+	with cte1 as(
+	select
+		 case when sales_amount > 2000 then 'above 2,000'
+		      when sales_amount between 1000 and 1999 then 'between 1000 and 1999'
+		      when sales_amount between 500 and 999 then 'between 500 and 999'
+		      when sales_amount < 500 then 'less than 500'
+		 end as sales_remark
+	from gold.fact_sales
+	),
+	cte2 as(
+	select
+		sales_remark,
+		count(*) as total_count,
+		sum(count(*)) over() as overall_count
+	from cte1
+	group by sales_remark
+	)
+	select
+		sales_remark,
+		total_count,
+		overall_count,
+		cast(cast(total_count as decimal)/overall_count * 100 as decimal(10,1)) as percet_of_overall
+	from cte2
+	order by total_count desc;
   </code></pre>
   </details>
 
@@ -180,20 +176,13 @@ This analysis helped uncovering several insights, including:
   Average sales ranged from $452 to $529 across all gender and marital status combinations, showing similar spending patterns.
 
 - **Top Sales Contributors: US and Australia**  
-  Over 60% of total sales came from the United States (31.2%) and Australia (30.9%), making them the leading markets.
+  Over 62% of total sales came from the United States (31.5%) and Australia (31.1%), making them the leading markets.
 
 - **2013 Was the Peak Sales Year**  
   The year 2013 recorded the highest sales, making it the business’s best-performing year in the dataset.
 
 - **Bikes Category Dominated Sales Across Years**  
-  Bikes consistently led all product categories, accounting for 96.46% of total sales highlighting Bikes as the company’s primary revenue driver year after year.
-
-  **Result:**
-  | category_name | sales_by_category | sales_overall | percent_of_overall |
-  |---------------|-------------------|---------------|--------------------|
-  | Bikes         | 28311657          | 29351258      | 96.46              |
-  | Accessories   | 699909            | 29351258      | 2.38               |
-  | Clothing      | 339692            | 29351258      | 1.16               |
+  From 2010 to 2013, Bikes remained the top-selling category each year, significantly outperforming Accessories and Clothing in total revenue.
  
 ---
   
